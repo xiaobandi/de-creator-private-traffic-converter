@@ -1,0 +1,110 @@
+apiVersion: digital-employee/v1
+kind: DigitalEmployee
+metadata:
+  id: de_creator_private_traffic_converter
+  name: 私域引流转化师
+  alias: null
+  repo: de-creator-private-traffic-converter
+  card_no: 5.4-4
+  group: creator
+  group_label: 自媒体从业者
+  phase: P1 二期
+  complexity: M-L：话术层为 S，企微连接器与合规边界将总评推至 M-L，总估 10-15 人日
+  score: 21
+  price: ¥100-300/月（直接关联收入，知识付费创作者可承受，据 R2 调研；R5 调研交叉印证私域类为付费旗舰）
+  channels:
+  - GitHub（必备基础渠道）
+  - 小红书
+  - 淘宝
+  - 闲鱼（私域 SOP 模板类商品适配货架电商）
+  - 千问办公
+  - 腾讯WorkBuddy Skill市场
+  license: Proprietary
+  version: 1.0.0
+spec:
+  positioning: 把公域粉丝合规沉淀为私域资产并培育成交的增收引擎
+  users: 知识付费/带货类创作者（专栏转化率 5-8% 的存量群体，据 R2 调研）
+  boundary: 做：钩子设计、培育 SOP、私域内容日历、成交话术；不做：承诺转化率、代用户收款/签约、不设计任何违反平台导流规则的"硬引流"话术
+  kpi: 私域添加率提升（相对基线）；7 天培育 SOP 完成率；转化率从 <1% 基线（据 R2 调研）向 2-3% 区间爬坡
+  roi_summary: 知识付费市场约 2808.8 亿元（据 R2 调研，艾媒咨询）；转化率 +1pct 对月收入即数百元增量，ROI 以"增收"计远超创作类
+  demand_refs:
+  - D21
+  - D26
+  - D07
+  demand_support: 充分
+  demand_evidence: 中
+runtime:
+  system_prompt: persona/system-prompt.md
+  boundary: persona/boundary.md
+  kpi: persona/kpi.md
+deliverables:
+  skills:
+  - slug: community-group-copy
+    name: 社群话术
+    kind: private
+    path: skills/community-group-copy
+    version: 1.0.0
+    maturity: contract-complete
+  - slug: hook-product-design
+    name: 钩子产品设计
+    kind: private
+    path: skills/hook-product-design
+    version: 1.0.0
+    maturity: contract-complete
+  - slug: sop-generator
+    name: SOP 生成
+    kind: private
+    path: skills/sop-generator
+    version: 1.0.0
+    maturity: contract-complete
+  workflows:
+  - slug: wf-creator-private-hook-design
+    name: 引流钩子内容生成
+    path: workflows/wf-creator-private-hook-design
+    version: 1.0.0
+    phase: P1
+    calls:
+    - hook-product-design
+    - hook-copy
+    - compliance-word-scan
+  - slug: wf-creator-private-nurture
+    name: 欢迎语与 7 天培育 SOP
+    path: workflows/wf-creator-private-nurture
+    version: 1.0.0
+    phase: P1
+    calls:
+    - sop-generator
+    - fan-segment-tag
+    - reply-copy-generator
+  - slug: wf-creator-private-copy
+    name: 私域内容日历
+    path: workflows/wf-creator-private-copy
+    version: 1.0.0
+    phase: P1
+    calls:
+    - moments-copy-writer
+    - community-group-copy
+    - persona-tone-lib
+  - slug: wf-creator-private-conversion-track
+    name: 成交话术与复购提醒
+    path: workflows/wf-creator-private-conversion-track
+    version: 1.0.0
+    phase: P2
+    calls:
+    - community-group-copy
+    - attribution-analysis
+  knowledge_base: kb/
+  connectors: connectors/bindings.yaml
+external_dependencies:
+- repo: agent-skills-core
+  version: 1.0.0
+  skills:
+  - attribution-analysis
+  - compliance-word-scan
+  - fan-segment-tag
+  - hook-copy
+  - moments-copy-writer
+  - persona-tone-lib
+  - reply-copy-generator
+  resolution: external
+spec_only_dependencies: []
