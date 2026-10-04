@@ -7,6 +7,19 @@
 
 ![架构](docs/images/architecture.svg)
 
+## 效果（真实执行）
+
+![真实效果](workflows/wf-creator-private-copy/docs/images/00-effect.png)
+
+*上图为**真实效果对比**，不是示意图：左栏是输入材料与要求，右栏是该次执行的产出原文，
+两栏取自同一次真实执行记录。*
+
+- 完整台账：[`reports/real-run/wf-creator-private-copy.md`](reports/real-run/wf-creator-private-copy.md)
+- 录屏与终端回放：[`workflows/wf-creator-private-copy/docs/images/`](workflows/wf-creator-private-copy/docs/images/)（`08-demo-run.gif` / `08-demo-run.mp4` / `04-terminal-run.png`）
+- 使用示例：[`workflows/wf-creator-private-copy/docs/使用示例.md`](workflows/wf-creator-private-copy/docs/使用示例.md)
+> 实测判定：**通过**　·　可用度 4/5　·　编造数字 0 处　·　红线命中 5 次 / 拦截 5 次
+
+
 **一句话**：知识付费/带货类创作者（专栏转化率 5-8% 的存量群体，据 R2 调研）
 
 ---
@@ -104,7 +117,7 @@ de-creator-private-traffic-converter/
 
 | 项 | 值 |
 |---|---|
-| 技能文件数 | 97 |
+| 技能文件数 | 172 |
 | 多场景用例数 | 221 |
 | 用例通过 | 221 |
 | 验收结论 | ✅ 通过 |

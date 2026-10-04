@@ -1,61 +1,67 @@
 ---
-name: wf-creator-private-nurture
+name: wf-creator-private-conversion-track
 description: >-
-  私域引流转化师 的「欢迎语与 7 天培育 SOP」工作流：新粉分层→7 天触达剧本→节点话术。触发方式：事件（新粉加入）。
-  当用户要完成「欢迎语与 7 天培育 SOP」这件事、或触发了上述条件时使用。
+  私域引流转化师 的「成交话术与复购提醒」工作流：漏斗定位→节点话术→沉睡名单唤醒剧本。触发方式：事件（转化节点/沉睡唤醒）。
+  当用户要完成「成交话术与复购提醒」这件事、或触发了上述条件时使用。
 license: Proprietary
+compatibility: >-
+  需要能读取工作区文件；若环境支持执行代码，将额外启用 scripts/ 下的确定性脚本路径。
+  跨 WorkBuddy / ChatGPT / DeepSeek Harness / Kimi Work / 豆包工作。
 metadata:
   author: PLATFORM
   version: "1.0.0"
   standard: agent-skills/v1
+  library: agent-skills-library
   layer: L2-workflow
   owner: de_creator_private_traffic_converter
+  repo: de-creator-private-traffic-converter
+  visibility: private_to_employee
+  delivery: employee
   complexity: M
-  phase: P1
+  phase: P2
   source: library
 ---
 
-# 欢迎语与 7 天培育 SOP
+# 成交话术与复购提醒
 
-> 归属：**私域引流转化师**（`de-creator-private-traffic-converter`）　触发：事件（新粉加入）　
-> 复杂度 M　阶段 P1
+> 归属：**私域引流转化师**（`de-creator-private-traffic-converter`）　触发：事件（转化节点/沉睡唤醒）　
+> 复杂度 M　阶段 P2
 
 ## 一、这条工作流解决什么
 
-新粉分层→7 天触达剧本→节点话术
+漏斗定位→节点话术→沉睡名单唤醒剧本
 
-**业务收益**：替代人工逐一维护，月省约 15h；转化率每 +1pct 对知识付费创作者即数百元月增收
+**业务收益**：直接关联收入：唤醒一单即覆盖全年订阅费
 
 ## 二、调用的 SKILL（必填列，逐条锁定版本）
 
 | 技能名 | slug | 来源仓 | 版本 |
 |---|---|---|---|
-| `SOP 生成` | `sop-generator` | 本仓 | v1.0.0 |
-| `粉丝分层打标` | `fan-segment-tag` | core | v1.0.0 |
-| `回复话术生成` | `reply-copy-generator` | core | v1.0.0 |
+| `社群话术` | `community-group-copy` | 本仓 | v1.0.0 |
+| `归因分析` | `attribution-analysis` | core | v1.0.0 |
 
 > 公共技能来自 `agent-skills-core@1.0.0`，本仓库只做外部依赖引用，
 > **不内联复制**其正文——这是三层仓库体系的硬规则，避免同一能力多份副本各自漂移。
 
 ## 三、执行步骤（每步四要素齐备）
 
-### 步骤 1：新粉分层
+### 步骤 1：漏斗定位
 
-- **做**：新粉分层
+- **做**：漏斗定位
 - **输入来源**：用户提供的原始材料（工作流第 1 步没有「上一步」）/ 本员工知识库 `kb/` / 连接器只读数据；三者皆空时必须停在 G1 闸门
 - **依据与结论**：把本步结论对应到具体输入项
 - **未决 · 待填**：缺数据处写 `<待填>` 并给出获取方式
 
-### 步骤 2：7 天触达剧本
+### 步骤 2：节点话术
 
-- **做**：7 天触达剧本
+- **做**：节点话术
 - **输入来源**：步骤 1 的产出 / 本员工知识库 `kb/` / 连接器只读数据
 - **依据与结论**：把本步结论对应到具体输入项
 - **未决 · 待填**：缺数据处写 `<待填>` 并给出获取方式
 
-### 步骤 3：节点话术
+### 步骤 3：沉睡名单唤醒剧本
 
-- **做**：节点话术
+- **做**：沉睡名单唤醒剧本
 - **输入来源**：步骤 2 的产出 / 本员工知识库 `kb/` / 连接器只读数据
 - **依据与结论**：把本步结论对应到具体输入项
 - **未决 · 待填**：缺数据处写 `<待填>` 并给出获取方式

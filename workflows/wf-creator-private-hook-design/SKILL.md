@@ -1,61 +1,68 @@
 ---
-name: wf-creator-private-copy
+name: wf-creator-private-hook-design
 description: >-
-  私域引流转化师 的「私域内容日历」工作流：朋友圈+社群内容排期→人设文案→发送提醒。触发方式：定时（每周）。
-  当用户要完成「私域内容日历」这件事、或触发了上述条件时使用。
+  私域引流转化师 的「引流钩子内容生成」工作流：定位目标人群→设计资料包/清单/测评钩子→合规校验。触发方式：人工（按活动）。
+  当用户要完成「引流钩子内容生成」这件事、或触发了上述条件时使用。
 license: Proprietary
+compatibility: >-
+  需要能读取工作区文件；若环境支持执行代码，将额外启用 scripts/ 下的确定性脚本路径。
+  跨 WorkBuddy / ChatGPT / DeepSeek Harness / Kimi Work / 豆包工作。
 metadata:
   author: PLATFORM
   version: "1.0.0"
   standard: agent-skills/v1
+  library: agent-skills-library
   layer: L2-workflow
   owner: de_creator_private_traffic_converter
+  repo: de-creator-private-traffic-converter
+  visibility: private_to_employee
+  delivery: employee
   complexity: S
   phase: P1
   source: library
 ---
 
-# 私域内容日历
+# 引流钩子内容生成
 
-> 归属：**私域引流转化师**（`de-creator-private-traffic-converter`）　触发：定时（每周）　
+> 归属：**私域引流转化师**（`de-creator-private-traffic-converter`）　触发：人工（按活动）　
 > 复杂度 S　阶段 P1
 
 ## 一、这条工作流解决什么
 
-朋友圈+社群内容排期→人设文案→发送提醒
+定位目标人群→设计资料包/清单/测评钩子→合规校验
 
-**业务收益**：私域内容 0.5h/天→10min，月省约 10h≈¥300
+**业务收益**：钩子设计外包市场价数百元/次，自产即省
 
 ## 二、调用的 SKILL（必填列，逐条锁定版本）
 
 | 技能名 | slug | 来源仓 | 版本 |
 |---|---|---|---|
-| `朋友圈文案生成` | `moments-copy-writer` | core | v1.0.0 |
-| `社群话术` | `community-group-copy` | 本仓 | v1.0.0 |
-| `人设语气库` | `persona-tone-lib` | core | v1.0.0 |
+| `钩子产品设计` | `hook-product-design` | 本仓 | v1.0.0 |
+| `钩子文案` | `hook-copy` | core | v1.0.0 |
+| `平台合规词扫描` | `compliance-word-scan` | core | v1.0.0 |
 
 > 公共技能来自 `agent-skills-core@1.0.0`，本仓库只做外部依赖引用，
 > **不内联复制**其正文——这是三层仓库体系的硬规则，避免同一能力多份副本各自漂移。
 
 ## 三、执行步骤（每步四要素齐备）
 
-### 步骤 1：朋友圈+社群内容排期
+### 步骤 1：定位目标人群
 
-- **做**：朋友圈+社群内容排期
+- **做**：定位目标人群
 - **输入来源**：用户提供的原始材料（工作流第 1 步没有「上一步」）/ 本员工知识库 `kb/` / 连接器只读数据；三者皆空时必须停在 G1 闸门
 - **依据与结论**：把本步结论对应到具体输入项
 - **未决 · 待填**：缺数据处写 `<待填>` 并给出获取方式
 
-### 步骤 2：人设文案
+### 步骤 2：设计资料包/清单/测评钩子
 
-- **做**：人设文案
+- **做**：设计资料包/清单/测评钩子
 - **输入来源**：步骤 1 的产出 / 本员工知识库 `kb/` / 连接器只读数据
 - **依据与结论**：把本步结论对应到具体输入项
 - **未决 · 待填**：缺数据处写 `<待填>` 并给出获取方式
 
-### 步骤 3：发送提醒
+### 步骤 3：合规校验
 
-- **做**：发送提醒
+- **做**：合规校验
 - **输入来源**：步骤 2 的产出 / 本员工知识库 `kb/` / 连接器只读数据
 - **依据与结论**：把本步结论对应到具体输入项
 - **未决 · 待填**：缺数据处写 `<待填>` 并给出获取方式
