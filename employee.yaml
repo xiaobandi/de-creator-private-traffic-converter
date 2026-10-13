@@ -19,7 +19,7 @@ metadata:
   - 闲鱼（私域 SOP 模板类商品适配货架电商）
   - 千问办公
   - 腾讯WorkBuddy Skill市场
-  license: Proprietary
+  license: Apache-2.0
   version: 1.0.0
 spec:
   positioning: 把公域粉丝合规沉淀为私域资产并培育成交的增收引擎

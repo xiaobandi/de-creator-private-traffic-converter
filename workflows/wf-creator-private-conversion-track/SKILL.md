@@ -3,7 +3,7 @@ name: wf-creator-private-conversion-track
 description: >-
   私域引流转化师 的「成交话术与复购提醒」工作流：漏斗定位→节点话术→沉睡名单唤醒剧本。触发方式：事件（转化节点/沉睡唤醒）。
   当用户要完成「成交话术与复购提醒」这件事、或触发了上述条件时使用。
-license: Proprietary
+license: Apache-2.0
 compatibility: >-
   需要能读取工作区文件；若环境支持执行代码，将额外启用 scripts/ 下的确定性脚本路径。
   跨 WorkBuddy / ChatGPT / DeepSeek Harness / Kimi Work / 豆包工作。

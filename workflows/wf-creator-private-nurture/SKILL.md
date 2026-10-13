@@ -3,7 +3,7 @@ name: wf-creator-private-nurture
 description: >-
   私域引流转化师 的「欢迎语与 7 天培育 SOP」工作流：新粉分层→7 天触达剧本→节点话术。触发方式：事件（新粉加入）。
   当用户要完成「欢迎语与 7 天培育 SOP」这件事、或触发了上述条件时使用。
-license: Proprietary
+license: Apache-2.0
 compatibility: >-
   需要能读取工作区文件；若环境支持执行代码，将额外启用 scripts/ 下的确定性脚本路径。
   跨 WorkBuddy / ChatGPT / DeepSeek Harness / Kimi Work / 豆包工作。

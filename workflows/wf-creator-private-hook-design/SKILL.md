@@ -3,7 +3,7 @@ name: wf-creator-private-hook-design
 description: >-
   私域引流转化师 的「引流钩子内容生成」工作流：定位目标人群→设计资料包/清单/测评钩子→合规校验。触发方式：人工（按活动）。
   当用户要完成「引流钩子内容生成」这件事、或触发了上述条件时使用。
-license: Proprietary
+license: Apache-2.0
 compatibility: >-
   需要能读取工作区文件；若环境支持执行代码，将额外启用 scripts/ 下的确定性脚本路径。
   跨 WorkBuddy / ChatGPT / DeepSeek Harness / Kimi Work / 豆包工作。
