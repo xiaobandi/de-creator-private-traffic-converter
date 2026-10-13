@@ -5,6 +5,12 @@
 > **5.4-4**　·　自媒体从业者　·　阶段 P1 二期　·　
 > 复杂度 M-L：话术层为 S，企微连接器与合规边界将总评推至 M-L，总估 10-15 人日　·　¥100-300/月（直接关联收入，知识付费创作者可承受，据 R2 调研；R5 调研交叉印证私域类为付费旗舰）　·　定义卡 5.4-4
 
+## 演示（真实执行录播）
+
+![演示](workflows/wf-creator-private-copy/docs/images/08-demo-run.gif)
+
+*真实执行回放（GIF 自动循环，非摆拍）· [▶ 观看完整版 MP4](workflows/wf-creator-private-copy/docs/images/08-demo-run.mp4) · 台账见 [`reports/real-run/wf-creator-private-copy.md`](reports/real-run/wf-creator-private-copy.md)*
+
 ![架构](docs/images/architecture.svg)
 
 ## 效果（真实执行）
@@ -58,6 +64,7 @@ python3 tests/run.py            # 先跑一遍自检，确认环境与契约都�
 
 ```text
 de-creator-private-traffic-converter/
+├── employee.md            # 人读定义卡（12 主字段 + 2 扩展组，由 employee.yaml 生成）
 ├── employee.yaml          # 机器契约（能力清单 + 依赖锁）
 ├── dependencies.yaml      # 对 core 的外部依赖（含版本）
 ├── persona/               # 运行提示词 / 边界 / KPI
